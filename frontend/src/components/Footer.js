@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { FaTwitter, FaLinkedin, FaInstagram } from "react-icons/fa";
+import { FaTwitter, FaLinkedin,FaGithub} from "react-icons/fa";
 import { MdEmail } from "react-icons/md";
 import '../style/style.css';
 import { postEmail } from "../services/service.js";
@@ -23,7 +23,7 @@ function Footer() {
   return (
     <footer className="footer">
       <div className="social-links">
-        <a href="https://twitter.com" target="_blank" rel="noopener noreferrer">
+        <a href="https://www.x.com/open8hub" target="_blank" rel="noopener noreferrer">
           <FaTwitter size={24} />
         </a>
         <a
@@ -36,13 +36,9 @@ function Footer() {
         <a href="mailto:example@gmail.com" rel="noopener noreferrer">
           <MdEmail size={24} />
         </a>
-        <a
-          href="https://instagram.com"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <FaInstagram size={24} />
-        </a>
+        <a href="https://github.com/Open-Hub-Community" target="_blank" rel="noopener noreferrer">
+    <FaGithub size={24} />
+  </a>
       </div>
       <form onSubmit={handleSubmit} className="newsletter-form">
         <input
