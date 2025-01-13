@@ -55,7 +55,7 @@ const About = () => {
       <h2 className="section-title purple">📚 Stay Connected</h2>
       <ul className="list">
         <li>Email: <a href="mailto:open8hub@gmail.com" target='_blank' rel='noreferrer' className="link">hello@openhub.com</a></li>
-        <li>GitHub: <a href="https://github.com/Open-Hub-Community"target='_blank' rel='noreferrer' className="link">OpenHub GitHub Repository</a></li>
+        <li>GitHub: <a href="https://github.com/Open-Hub-Community"target='_blank' rel='noreferrer' className="link">OpenHub Organization</a></li>
         <li>Twitter: <a href="https://x.com/open8hub" target='_blank' rel='noreferrer' className="link">@OpenHub</a></li>
         <li>LinkedIn: <a href="https://www.linkedin.com/company/open8hub" target='_blank' rel='noreferrer' className="link">OpenHub LinkedIn</a></li>
       </ul>
