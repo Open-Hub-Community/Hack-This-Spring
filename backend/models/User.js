@@ -19,7 +19,8 @@ const UserSchema = new mongoose.Schema({
     phoneNumber: {
         type: String,
         required: true,
-        unique: true
+        unique: true,
+        match: /^\d{10}$/
     },
     college: {
         type: String,
