@@ -1,5 +1,6 @@
 import React, { useState } from "react";
-import { FaTwitter, FaLinkedin, FaFacebook, FaInstagram } from "react-icons/fa";
+import { FaTwitter, FaLinkedin,FaInstagram } from "react-icons/fa";
+import { MdEmail } from 'react-icons/md';
 import "../style.css";
 import { postEmail } from "../services/service.js";
 function Footer() {
@@ -32,12 +33,8 @@ function Footer() {
         >
           <FaLinkedin size={24} />
         </a>
-        <a
-          href="https://facebook.com"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <FaFacebook size={24} />
+        <a href="mailto:example@gmail.com"  rel="noopener noreferrer">
+          <MdEmail size={24} />
         </a>
         <a
           href="https://instagram.com"
