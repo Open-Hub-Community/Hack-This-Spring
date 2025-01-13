@@ -10,7 +10,7 @@ function Register() {
   const [email, setEmail] = useState("");
   const [phone, setPhone] = useState("");
   const [college, setCollege] = useState("");
-  const [semester, setSemester] = useState("3");
+  const [semester, setSemester] = useState("");
 
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -75,8 +75,13 @@ function Register() {
             id="phoneNumber"
             name="phoneNumber"
             value={phone}
-            onChange={(e) => setPhone(e.target.value)}
+            onChange={(e) => {const value = e.target.value; if (/^\d{0,10}$/.test(value)) {
+              setPhone(value);
+            }}}
             required
+            maxLength={10}
+            pattern="^[0-9]{10}$"
+            title="Phone number must be 10 digits"
           />
         </div>
         <div className="form-group">
@@ -99,7 +104,7 @@ function Register() {
             onChange={(e) => setSemester(e.target.value)}
             required
           >
-            <option value="">Select Semester</option>
+            <option value="" disabled>Select Semester</option>
             <option value="3">3rd Semester</option>
             <option value="4">4th Semester</option>
             <option value="5">5th Semester</option>
