@@ -27,6 +27,13 @@ const UserSchema = new mongoose.Schema({
         trim: true,
         minlength: 2,
         maxlength: 100
+    },
+    semester: {
+        type: String,
+        required: true,
+        trim: true,
+        minlength: 1,
+        maxlength: 20
     }
 }, { timestamps: true });
 

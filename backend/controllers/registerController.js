@@ -2,10 +2,10 @@ import User from "../models/User.js";
 
 const handleNewRegistration = async (req, res) => {
     try {
-        const { name, email, phoneNumber, college } = req.body;
+        const { name, email, phoneNumber, college, semester } = req.body;
 
         // Validate required fields
-        if (!name || !email || !phoneNumber || !college) {
+        if (!name || !email || !phoneNumber || !college || !semester) {
             return res.status(400).json({ message: 'All fields are required.' });
         }
 
@@ -26,7 +26,7 @@ const handleNewRegistration = async (req, res) => {
         }
 
         // Create a new user
-        const newUser = await User.create({ name, email, phoneNumber, college });
+        const newUser = await User.create({ name, email, phoneNumber, college, semester });
 
         console.log('New user created:', newUser);
         return res.status(201).json({
