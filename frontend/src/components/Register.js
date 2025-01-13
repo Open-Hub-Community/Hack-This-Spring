@@ -1,32 +1,46 @@
-import React from 'react'
-import { useState } from 'react';
-import '../style/register.css';
+import React from "react";
+import { useState } from "react";
+import { postForm } from "../services/service.js";
+import "../style/register.css";
 
 function Register() {
   const [isSubmitted, setIsSubmitted] = useState(false);
+  const [isLoading, setIsLoading] = useState(false);
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
   const [phone, setPhone] = useState("");
   const [college, setCollege] = useState("");
   const [semester, setSemester] = useState("3");
 
-
   const handleSubmit = (e) => {
     e.preventDefault();
-    
-    setIsSubmitted(true);
-    
-  }
+    setIsLoading(true);
+    const data = { name, email, phone, college, semester };
+    // console.log(data);
+    postForm(data)
+      .then((result) => {
+        console.log(result.data);
+        setIsSubmitted(true);
+        setIsLoading(false);
+      })
+      .catch((err) => {
+        console.error(err);
+        setIsLoading(false);
+      });
+  };
 
   if (isSubmitted) {
     return (
       <div className="register-container">
         <div className="success-message">
           <h2>Registration Successful!</h2>
-          <p>Thank you for registering for our hackathon. You will receive a confirmation email shortly with further details.</p>
+          <p>
+            Thank you for registering for our hackathon. You will receive a
+            confirmation email shortly with further details.
+          </p>
         </div>
       </div>
-    )
+    );
   }
   return (
     <div className="register-container">
@@ -39,7 +53,7 @@ function Register() {
             id="name"
             name="name"
             value={name}
-            onChange={(e)=>setName(e.target.value)}
+            onChange={(e) => setName(e.target.value)}
             required
           />
         </div>
@@ -50,7 +64,7 @@ function Register() {
             id="email"
             name="email"
             value={email}
-            onChange={(e)=>setEmail(e.target.value)}
+            onChange={(e) => setEmail(e.target.value)}
             required
           />
         </div>
@@ -61,7 +75,7 @@ function Register() {
             id="phoneNumber"
             name="phoneNumber"
             value={phone}
-            onChange={(e)=>setPhone(e.target.value)}
+            onChange={(e) => setPhone(e.target.value)}
             required
           />
         </div>
@@ -72,7 +86,7 @@ function Register() {
             id="college"
             name="college"
             value={college}
-            onChange={(e)=>setCollege(e.target.value)}
+            onChange={(e) => setCollege(e.target.value)}
             required
           />
         </div>
@@ -82,7 +96,7 @@ function Register() {
             id="semester"
             name="semester"
             value={semester}
-            onChange={(e)=>setSemester(e.target.value)}
+            onChange={(e) => setSemester(e.target.value)}
             required
           >
             <option value="">Select Semester</option>
@@ -94,10 +108,12 @@ function Register() {
             <option value="8">8th Semester</option>
           </select>
         </div>
-        <button type="submit" className="submit-btn">Submit Registration</button>
+        <button type="submit" className="submit-btn" disabled={isLoading}>
+          {isLoading ? "Submitting..." : "Submit Registration"}
+        </button>
       </form>
     </div>
-  )
+  );
 }
 
-export default Register
+export default Register;

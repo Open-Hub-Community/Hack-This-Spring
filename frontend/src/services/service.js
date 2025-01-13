@@ -5,5 +5,6 @@ const api  = axios.create({
 })
 
 const postEmail = (email) => api.post("/posts",email);
+const postForm = (details) => api.post("/posts",details);
 
-export {postEmail}
+export {postEmail,postForm}

@@ -9,8 +9,8 @@ function Footer() {
     e.preventDefault();
     setEmail("");
     postEmail({ email })
-      .then((response) => {
-        console.log(response.data);
+      .then((result) => {
+        console.log(result.data);
         alert("Subscribed successfully!");
       })
 
@@ -44,9 +44,6 @@ function Footer() {
           <FaInstagram size={24} />
         </a>
       </div>
-      <p className="footer-text">
-        &copy; {currentYear} Open-Hub-Community, All rights reserved.
-      </p>
       <form onSubmit={handleSubmit} className="newsletter-form">
         <input
           type="email"
@@ -57,6 +54,9 @@ function Footer() {
         />
         <button type="submit">Send</button>
       </form>
+      <p className="footer-text">
+        &copy; {currentYear} Open-Hub-Community, All rights reserved.
+      </p>
     </footer>
   );
 }
