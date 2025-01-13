@@ -19,7 +19,7 @@ function Register() {
     // console.log(data);
     postForm(data)
       .then((result) => {
-        console.log(result);
+        console.log(result.message);
         setIsSubmitted(true);
         setIsLoading(false);
       })
