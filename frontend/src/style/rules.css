@@ -1,69 +1,110 @@
 body {
-    font-family: 'Roboto', sans-serif;
+    background-color: #e6f2ff;
     margin: 0;
-    padding: 0;
-    background-color: #f9f9f9;
+    padding: 20px;
   }
+  
+  @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap');
   
   .hackathon-rules {
+    font-family: 'Poppins', sans-serif;
     max-width: 800px;
-    margin: 0 auto;
-    padding: 20px;
-    background-color: #ffffff;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    border-radius: 8px;
-    color: #2c3e50;
+    margin: 20px auto;
+    padding: 2rem;
+    background: linear-gradient(135deg, #ffffff, #e6f2ff);
+    color: #333333;
+    border-radius: 10px;
+    box-shadow: 0 0 20px rgba(100, 149, 237, 0.2);
+    animation: glow 4s infinite;
   }
   
-  h1 {
+  .hackathon-rules h1 {
+    font-size: 3rem;
     text-align: center;
-    color: #34495e;
+    margin-bottom: 2rem;
+    color: #2c3e50;
+    text-shadow: 2px 2px 4px rgba(30, 144, 255, 0.3);
+  }
+  
+  .hackathon-rules h2 {
     font-size: 2rem;
-    margin-bottom: 1.5rem;
+    color: #4169e1;
+    border-bottom: 2px solid #4169e1;
+    padding-bottom: 0.5rem;
+    margin-top: 2rem;
   }
   
-  h2 {
-    color: #16a085;
-    margin-top: 1.5rem;
+  .hackathon-rules p, .hackathon-rules li {
+    font-size: 1rem;
+    line-height: 1.6;
+    color: #333333;
   }
   
-  h2.spirit-of-competition {
-    color: #e74c3c;
+  .hackathon-rules section {
+    background-color: #ffffff;
+    padding: 1.5rem;
+    margin-bottom: 2rem;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(100, 149, 237, 0.1);
+    transition: transform 0.3s ease;
   }
   
-  ol {
+  .hackathon-rules section:hover {
+    background-color: #f0f8ff;
+    transform: translateY(-5px);
+  }
+  
+  .hackathon-rules ol, .hackathon-rules ul {
     padding-left: 1.5rem;
-    margin: 1rem 0;
   }
   
-  ol li {
+  .hackathon-rules li {
     margin-bottom: 0.5rem;
   }
   
-  ul {
-    padding-left: 1.5rem;
-    margin: 1rem 0;
-  }
-  
-  ul li {
-    margin-bottom: 0.5rem;
-  }
-  
-  a {
-    color: #3498db;
+  .hackathon-rules a {
+    color: #1e90ff;
     text-decoration: none;
     transition: color 0.3s ease;
   }
   
-  a:hover {
-    color: #2980b9;
+  .hackathon-rules a:hover {
+    color: #4169e1;
     text-decoration: underline;
   }
   
-  footer {
+  .hackathon-rules footer {
     text-align: center;
     margin-top: 2rem;
-    color: #2ecc71;
-    font-weight: bold;
+    font-style: italic;
+    color: #4169e1;
   }
+  
+  @keyframes glow {
+    0% {
+      box-shadow: 0 0 5px rgba(100, 149, 237, 0.2);
+    }
+    50% {
+      box-shadow: 0 0 20px rgba(100, 149, 237, 0.6);
+    }
+    100% {
+      box-shadow: 0 0 5px rgba(100, 149, 237, 0.2);
+    }
+  }
+  
+  
+  @media (max-width: 600px) {
+    .hackathon-rules {
+      padding: 1rem;
+    }
+    
+    .hackathon-rules h1 {
+      font-size: 2rem;
+    }
+    
+    .hackathon-rules h2 {
+      font-size: 1.5rem;
+    }
+  }
+  
   

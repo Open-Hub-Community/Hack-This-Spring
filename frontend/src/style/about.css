@@ -1,63 +1,106 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap');
+
 .about-container {
-    padding: 20px;
-    font-family: Arial, sans-serif;
+  font-family: 'Poppins', sans-serif;
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 2rem;
+  background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+  border-radius: 20px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+}
+
+.about-title {
+  font-size: 3rem;
+  color: #2c3e50;
+  text-align: center;
+  margin-bottom: 1.5rem;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.about-subtitle {
+  font-size: 1.2rem;
+  color: #34495e;
+  text-align: center;
+  margin-bottom: 2rem;
+  line-height: 1.6;
+}
+
+.section-title {
+  font-size: 1.8rem;
+  margin-top: 2rem;
+  margin-bottom: 1rem;
+  padding-bottom: 0.5rem;
+  border-bottom: 3px solid;
+}
+
+.section-title.green {
+  color: #27ae60;
+  border-color: #27ae60;
+}
+
+.section-title.red {
+  color: #e74c3c;
+  border-color: #e74c3c;
+}
+
+.section-title.blue {
+  color: #3498db;
+  border-color: #3498db;
+}
+.section-title.orange {
+    color: #FFA500; 
+    border-color: #FFA500;
   }
-  
-  .about-title {
-    text-align: center;
-    color: #2c3e50;
-  }
-  
-  .about-subtitle {
-    text-align: center;
-    color: #34495e;
-    font-size: 1.2rem;
-  }
-  
-  .section-title {
-    margin-top: 1.5rem;
-  }
-  
-  .section-title.green {
-    color: #16a085;
-  }
-  
-  .section-title.red {
-    color: #e74c3c;
-  }
-  
-  .section-title.blue {
-    color: #3498db;
-  }
-  
-  .section-title.orange {
-    color: #f39c12;
-  }
-  
   .section-title.purple {
-    color: #8e44ad;
+    color: #800080;
+    border-color: #800080;
   }
-  
-  .list {
-    padding-left: 1.5rem;
-    margin: 1rem 0;
+
+.list {
+  list-style-type: none;
+  padding-left: 0;
+}
+
+.list li {
+  margin-bottom: 1rem;
+  padding-left: 30px;
+  position: relative;
+}
+
+.list li::before {
+  content: '🚀';
+  position: absolute;
+  left: 0;
+  top: 0;
+}
+
+a {
+  color: #3498db;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+a:hover {
+  color: #2980b9;
+  text-decoration: underline;
+}
+
+@media (max-width: 600px) {
+  .about-container {
+    padding: 1rem;
   }
-  
-  .link {
-    color: #007bff;
-    text-decoration: none;
-    transition: color 0.3s ease;
+
+  .about-title {
+    font-size: 2rem;
   }
-  
-  .link:hover {
-    color: #0056b3;
-    text-decoration: underline;
+
+  .about-subtitle {
+    font-size: 1rem;
   }
-  
-  .about-footer {
-    text-align: center;
-    color: #2ecc71;
-    font-size: 1.1rem;
-    margin-top: 2rem;
+
+  .section-title {
+    font-size: 1.5rem;
   }
-  
+}
+
