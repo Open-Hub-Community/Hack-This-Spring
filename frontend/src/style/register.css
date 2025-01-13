@@ -78,10 +78,18 @@ input:focus, select:focus {
 
   .success-message {
     text-align: center;
-    color: #79f8ae;
+    
   }
   
   .success-message h2 {
     font-size: 2rem;
     margin-bottom: 1rem;
+    color: #79f8ae;
+  }
+
+  .success-message p {
+    color: #040F0F;
+    font-family: 'Dancing Script', cursive;
+    line-height: 1.5; 
+    font-style: italic;
   }
