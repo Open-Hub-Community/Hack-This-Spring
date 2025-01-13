@@ -1,6 +1,6 @@
 import React, { useState } from "react";
-import { FaTwitter, FaLinkedin,FaInstagram } from "react-icons/fa";
-import { MdEmail } from 'react-icons/md';
+import { FaTwitter, FaLinkedin, FaInstagram } from "react-icons/fa";
+import { MdEmail } from "react-icons/md";
 import "../style.css";
 import { postEmail } from "../services/service.js";
 function Footer() {
@@ -33,7 +33,7 @@ function Footer() {
         >
           <FaLinkedin size={24} />
         </a>
-        <a href="mailto:example@gmail.com"  rel="noopener noreferrer">
+        <a href="mailto:example@gmail.com" rel="noopener noreferrer">
           <MdEmail size={24} />
         </a>
         <a

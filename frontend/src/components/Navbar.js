@@ -1,5 +1,5 @@
 import React from "react";
-import { Link } from "react-router-dom";
+import { NavLink } from "react-router-dom";
 import logo from '../assets/logo.ico';
 import '../style.css';
 
@@ -8,16 +8,30 @@ function Navbar() {
     <nav className="navbar">
       <div className="navbar-container">
         <div>
-        <img src= {logo} alt="Hackathon Logo" className="logo-image" />
-          
+          <img src={logo} alt="Hackathon Logo" className="logo-image" />
         </div>
         <div className="navbar-links">
-          <Link to="/">Home</Link>
-          <Link to="/submit-project">Submit Project</Link>
-          <Link to="/about">About</Link>
-          <Link to="/register">
-          <button className="register-button">Register Now</button>
-          </Link>
+          <NavLink 
+            to="/" 
+            className={({ isActive }) => isActive ? "active-link" : ""}
+          >
+            Home
+          </NavLink>
+          <NavLink 
+            to="/submit-project" 
+            className={({ isActive }) => isActive ? "active-link" : ""}
+          >
+            Submit Project
+          </NavLink>
+          <NavLink 
+            to="/about" 
+            className={({ isActive }) => isActive ? "active-link" : ""}
+          >
+            About
+          </NavLink>
+          <NavLink to="/register">
+            <button className="register-button">Register Now</button>
+          </NavLink>
         </div>
       </div>
     </nav>

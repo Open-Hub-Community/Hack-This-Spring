@@ -51,6 +51,12 @@ body {
   .navbar-links a:hover {
     color: #3273dc;
   }
+  .active-link {
+    font-weight: bold;
+    color: #007bff !important;
+    text-decoration: underline !important;
+  }
+  
   
   .register-button {
     background-color: #3273dc;
