@@ -1,0 +1,63 @@
+.about-container {
+    padding: 20px;
+    font-family: Arial, sans-serif;
+  }
+  
+  .about-title {
+    text-align: center;
+    color: #2c3e50;
+  }
+  
+  .about-subtitle {
+    text-align: center;
+    color: #34495e;
+    font-size: 1.2rem;
+  }
+  
+  .section-title {
+    margin-top: 1.5rem;
+  }
+  
+  .section-title.green {
+    color: #16a085;
+  }
+  
+  .section-title.red {
+    color: #e74c3c;
+  }
+  
+  .section-title.blue {
+    color: #3498db;
+  }
+  
+  .section-title.orange {
+    color: #f39c12;
+  }
+  
+  .section-title.purple {
+    color: #8e44ad;
+  }
+  
+  .list {
+    padding-left: 1.5rem;
+    margin: 1rem 0;
+  }
+  
+  .link {
+    color: #007bff;
+    text-decoration: none;
+    transition: color 0.3s ease;
+  }
+  
+  .link:hover {
+    color: #0056b3;
+    text-decoration: underline;
+  }
+  
+  .about-footer {
+    text-align: center;
+    color: #2ecc71;
+    font-size: 1.1rem;
+    margin-top: 2rem;
+  }
+  

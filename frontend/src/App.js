@@ -8,6 +8,8 @@ import About from './components/About';
 import Register from './components/Register';
 import Footer from './components/Footer';
 import NotFound from './components/NotFound';
+import Schedule from './components/Schedule';
+import Rules from './components/Rules';
 
 
 function App() {
@@ -18,6 +20,8 @@ function App() {
     <Routes>
     <Route path='/' element={<Home/>}/>
       <Route path='/submit-project' element={<SubmitProject/>}/>
+      <Route path='/schedule' element={<Schedule/>}/>
+      <Route path='/rules' element={<Rules/>}/>
       <Route path='/about' element={<About/>}/>
       <Route path='/register' element={<Register/>}/>
       <Route path='*' element={<NotFound/>}/>

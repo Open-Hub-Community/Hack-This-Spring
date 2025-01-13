@@ -1,14 +1,14 @@
 import React from "react";
 import { NavLink } from "react-router-dom";
 import logo from '../assets/logo.ico';
-import '../style/style.css';
+import '../style/nav.css';
 
 function Navbar() {
   return (
     <nav className="navbar">
       <div className="navbar-container">
-        <div>
-          <img src={logo} alt="Hackathon Logo" className="logo-image" />
+        <div className="navbar-logo">
+          <img src={logo} alt="Hackathon Logo" className="logo-image"/>
         </div>
         <div className="navbar-links">
           <NavLink 
@@ -22,6 +22,18 @@ function Navbar() {
             className={({ isActive }) => isActive ? "active-link" : ""}
           >
             Submit Project
+          </NavLink>
+          <NavLink 
+            to="/schedule" 
+            className={({ isActive }) => isActive ? "active-link" : ""}
+          >
+            Schedule
+          </NavLink>
+          <NavLink 
+            to="/rules" 
+            className={({ isActive }) => isActive ? "active-link" : ""}
+          >
+            Rules
           </NavLink>
           <NavLink 
             to="/about" 

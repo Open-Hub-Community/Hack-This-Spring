@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { FaTwitter, FaLinkedin,FaGithub} from "react-icons/fa";
 import { MdEmail } from "react-icons/md";
-import '../style/style.css';
+import '../style/footer.css';
 import { postEmail } from "../services/service.js";
 function Footer() {
   const [email, setEmail] = useState("");
@@ -27,13 +27,13 @@ function Footer() {
           <FaTwitter size={24} />
         </a>
         <a
-          href="https://linkedin.com"
+          href="https://www.linkedin.com/company/open8hub"
           target="_blank"
           rel="noopener noreferrer"
         >
           <FaLinkedin size={24} />
         </a>
-        <a href="mailto:example@gmail.com" rel="noopener noreferrer">
+        <a href="mailto:open8hub@gmail.com" rel="noopener noreferrer">
           <MdEmail size={24} />
         </a>
         <a href="https://github.com/Open-Hub-Community" target="_blank" rel="noopener noreferrer">
