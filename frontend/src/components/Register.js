@@ -1,8 +1,100 @@
 import React from 'react'
+import { useState } from 'react';
+import '../style/register.css';
 
 function Register() {
+  const [isSubmitted, setIsSubmitted] = useState(false);
+  const [name, setName] = useState("");
+  const [email, setEmail] = useState("");
+  const [phone, setPhone] = useState("");
+  const [college, setCollege] = useState("");
+  const [semester, setSemester] = useState("3");
+
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    
+    setIsSubmitted(true);
+    
+  }
+
+  if (isSubmitted) {
+    return (
+      <div className="register-container">
+        <div className="success-message">
+          <h2>Registration Successful!</h2>
+          <p>Thank you for registering for our hackathon. You will receive a confirmation email shortly with further details.</p>
+        </div>
+      </div>
+    )
+  }
   return (
-    <div></div>
+    <div className="register-container">
+      <h1>Register for the Hackathon</h1>
+      <form onSubmit={handleSubmit} className="register-form">
+        <div className="form-group">
+          <label htmlFor="name">Name *</label>
+          <input
+            type="text"
+            id="name"
+            name="name"
+            value={name}
+            onChange={(e)=>setName(e.target.value)}
+            required
+          />
+        </div>
+        <div className="form-group">
+          <label htmlFor="email">Email *</label>
+          <input
+            type="email"
+            id="email"
+            name="email"
+            value={email}
+            onChange={(e)=>setEmail(e.target.value)}
+            required
+          />
+        </div>
+        <div className="form-group">
+          <label htmlFor="phoneNumber">Phone Number *</label>
+          <input
+            type="tel"
+            id="phoneNumber"
+            name="phoneNumber"
+            value={phone}
+            onChange={(e)=>setPhone(e.target.value)}
+            required
+          />
+        </div>
+        <div className="form-group">
+          <label htmlFor="college">College *</label>
+          <input
+            type="text"
+            id="college"
+            name="college"
+            value={college}
+            onChange={(e)=>setCollege(e.target.value)}
+            required
+          />
+        </div>
+        <div className="form-group">
+          <label htmlFor="semester">Semester *</label>
+          <select
+            id="semester"
+            name="semester"
+            value={semester}
+            onChange={(e)=>setSemester(e.target.value)}
+            required
+          >
+            <option value="">Select Semester</option>
+            <option value="3">3rd Semester</option>
+            <option value="4">4th Semester</option>
+            <option value="7">7th Semester</option>
+            <option value="8">8th Semester</option>
+          </select>
+        </div>
+        <button type="submit" className="submit-btn">Submit Registration</button>
+      </form>
+    </div>
   )
 }
 

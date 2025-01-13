@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { FaTwitter, FaLinkedin, FaInstagram } from "react-icons/fa";
 import { MdEmail } from "react-icons/md";
-import "../style.css";
+import '../style/style.css';
 import { postEmail } from "../services/service.js";
 function Footer() {
   const [email, setEmail] = useState("");
