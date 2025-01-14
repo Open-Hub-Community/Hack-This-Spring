@@ -2,6 +2,7 @@ import React from "react";
 import { useState } from "react";
 import { postForm } from "../services/service.js";
 import "../style/register.css";
+import { NavLink } from "react-router-dom";
 
 function Register() {
   const [isSubmitted, setIsSubmitted] = useState(false);
@@ -12,11 +13,13 @@ function Register() {
   const [phone, setPhone] = useState("");
   const [college, setCollege] = useState("");
   const [semester, setSemester] = useState("");
+  const [gender, setGender] = useState("");
+  const [agree, setAgree] = useState(false);
 
   const handleSubmit = (e) => {
     e.preventDefault();
     setIsLoading(true);
-    const data = { name, email, phoneNumber: phone, college, semester };
+    const data = { name, email, phoneNumber: phone, college, semester, gender,agree };
     // console.log(data);
     postForm(data)
       .then((result) => {
@@ -39,7 +42,8 @@ function Register() {
           <h2>Registration Successful!</h2>
           <p>
             Thank you for registering for our hackathon. You will receive a
-            <span style={{color:'green'}}> confirmation email </span>shortly with further details.
+            <span style={{ color: "green" }}> confirmation email </span>shortly
+            with further details.
           </p>
         </div>
       </div>
@@ -78,9 +82,12 @@ function Register() {
             id="phoneNumber"
             name="phoneNumber"
             value={phone}
-            onChange={(e) => {const value = e.target.value; if (/^\d{0,10}$/.test(value)) {
-              setPhone(value);
-            }}}
+            onChange={(e) => {
+              const value = e.target.value;
+              if (/^\d{0,10}$/.test(value)) {
+                setPhone(value);
+              }
+            }}
             required
             maxLength={10}
             pattern="^[0-9]{10}$"
@@ -107,7 +114,11 @@ function Register() {
             onChange={(e) => setSemester(e.target.value)}
             required
           >
-            <option value="" disabled>Select Semester</option>
+            <option value="" disabled>
+              Select Semester
+            </option>
+            <option value="1">Ist Semester</option>
+            <option value="2">2nd Semester</option>
             <option value="3">3rd Semester</option>
             <option value="4">4th Semester</option>
             <option value="5">5th Semester</option>
@@ -116,6 +127,47 @@ function Register() {
             <option value="8">8th Semester</option>
           </select>
         </div>
+        <div className="form-group">
+          <label>Gender *</label>
+          <div className="gender-options">
+            <label htmlFor="male">
+              <input
+                type="radio"
+                id="male"
+                name="gender"
+                value="Male"
+                onChange={(e) => setGender(e.target.value)}
+                required
+              />
+              Male
+            </label>
+            <label htmlFor="female">
+              <input
+                type="radio"
+                id="female"
+                name="gender"
+                value="Female"
+                required
+                onChange={(e) => setGender(e.target.value)}
+              />
+              Female
+            </label>
+          </div>
+        </div>
+        <div className="form-group">
+  <label htmlFor="terms">
+    <input
+      type="checkbox"
+      id="terms"
+      name="terms"
+      checked={agree}
+      required
+      onChange={(e) => setAgree(e.target.checked)}
+    />
+    <span> I have read and agree to the <NavLink to="/conduct">Code of Conduct</NavLink> and <NavLink to="/rules">Rules</NavLink>.</span>
+  </label>
+</div>
+
         <button type="submit" className="submit-btn" disabled={isLoading}>
           {isLoading ? "Submitting..." : "Submit Registration"}
         </button>
