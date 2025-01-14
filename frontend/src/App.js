@@ -17,11 +17,13 @@ import ScrollToTop from './components/ScrollToTop';
 
 function App() {
   return (
-    <div className='container'>
+    
     <Router>
     <Navbar/>
     <ScrollToTop />
+    <div className='container'>
     <Routes>
+    
     <Route path='/' element={<Home/>}/>
       <Route path='/submit-project' element={<SubmitProject/>}/>
       <Route path='/schedule' element={<Schedule/>}/>
@@ -31,10 +33,13 @@ function App() {
       <Route path='/conduct' element={<Conduct/>}/>
       <Route path='/admin' element={<Admin/>}/>
       <Route path='*' element={<NotFound/>}/>
+      
     </Routes>
-    <Footer/>
-    </Router>
     </div>
+    <Footer/>
+    
+    </Router>
+    
   );
 }
 

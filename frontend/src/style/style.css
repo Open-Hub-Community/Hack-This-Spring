@@ -1,22 +1,103 @@
 * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    user-select: none;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  user-select: none;
 }
+
 body {
-    font-family: 'Roboto', sans-serif;
-    color: #000;
-    background-color: #D3FAC7;
-    line-height: 1.6;
-    
-   
+  font-family: 'Roboto', sans-serif;
+  color: #000;
+  background-color: #D3FAC7;
+  line-height: 1.6;
+  font-size: 16px;
+  overflow-x: hidden;
+  width: 100%;
 }
 
 .container {
-    max-width: 100%;
-    margin: 0 auto;
-    padding: 1rem;
+  width: 100%;
+  max-width: none !important;
+  margin: 0 auto;
+  padding: 0;
+}
+
+/* Media query for tablets (portrait) */
+@media screen and (min-width: 600px) {
+  body {
+      font-size: 18px;
+  }
+
+  .container {
+      padding: 1.5rem;
+      max-width: 90% !important;
+  }
+}
+
+/* Media query for tablets (landscape) and small desktops */
+@media screen and (min-width: 900px) {
+  body {
+      font-size: 20px;
+  }
+
+  .container {
+      padding: 2rem;
+      max-width: 80% !important;
+  }
+}
+
+/* Media query for larger desktops */
+@media screen and (min-width: 1200px) {
+  .container {
+      max-width: 1140px !important;
+  }
+}
+
+/* Additional responsive styling */
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+/* Improve readability on smaller screens */
+p {
+  margin-bottom: 1em;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  margin-bottom: 0.5em;
+  line-height: 1.2;
+}
+
+/* Responsive navigation (if applicable) */
+nav ul {
+  display: flex;
+  flex-direction: column;
+}
+
+@media screen and (min-width: 600px) {
+  nav ul {
+      flex-direction: row;
+  }
+}
+
+/* Responsive grid (if applicable) */
+.grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1rem;
+}
+
+@media screen and (min-width: 600px) {
+  .grid {
+      grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media screen and (min-width: 900px) {
+  .grid {
+      grid-template-columns: repeat(3, 1fr);
+  }
 }
 
 /* Mobile styles */
@@ -27,7 +108,7 @@ body {
   
     .container {
       padding: 1rem; /* Ensure spacing on mobile */
-      width: 90%; /* Slightly smaller width for mobile view */
+      width: 100%; /* Slightly smaller width for mobile view */
     }
   }
   

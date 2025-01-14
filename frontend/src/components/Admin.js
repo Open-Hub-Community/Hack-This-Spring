@@ -42,7 +42,7 @@ function Admin() {
           <div className="form-group">
             <label htmlFor="name">Admin Id</label>
             <input
-              type="text"
+              type="number"
               id="name"
               name="name"
               value={name}
