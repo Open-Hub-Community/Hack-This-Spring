@@ -75,10 +75,6 @@ const Home = () => {
       answer: "We are not able to provide travel reimbursements at this time.",
     },
     {
-      question: "What should I bring?",
-      answer: "Your laptop, charger, headphones, deodorant, pillow/blanket",
-    },
-    {
       question:
         "When can we start working on our project? Can I work on a previous project?",
       answer:
