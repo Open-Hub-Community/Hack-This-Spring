@@ -24,6 +24,7 @@ function Navbar() {
           >
             Home
           </NavLink>
+          {/* 
           <NavLink 
             to="/submit-project" 
             className={({ isActive }) => isActive ? "active-link" : ""}
@@ -38,6 +39,7 @@ function Navbar() {
           >
             Schedule
           </NavLink>
+          */}
           <NavLink 
             to="/rules" 
             className={({ isActive }) => isActive ? "active-link" : ""}
@@ -56,10 +58,12 @@ function Navbar() {
             <button className="register-button">Register Now</button>
           </NavLink>
         </div>
+        <div className="pos">
         <div className="hamburger" onClick={toggleMenu}>
           <span></span>
           <span></span>
           <span></span>
+        </div>
         </div>
       </div>
     </nav>
