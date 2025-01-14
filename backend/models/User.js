@@ -35,6 +35,14 @@ const UserSchema = new mongoose.Schema({
         trim: true,
         minlength: 1,
         maxlength: 20
+    },
+    gender: {
+        type: String,
+        required: true,
+    },
+    agree: {
+        type: Boolean,
+        required: true
     }
 }, { timestamps: true });
 

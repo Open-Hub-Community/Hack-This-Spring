@@ -2,10 +2,10 @@ import User from "../models/User.js";
 import nodemailer from 'nodemailer'
 
 const handleNewRegistration = async (req, res) => {
-    const { name, email, phoneNumber, college, semester } = req.body;
+    const { name, email, phoneNumber, college, semester,gender, agree } = req.body;
     
     // Validate required fields
-    if (!name || !email || !phoneNumber || !college || !semester) {
+    if (!name || !email || !phoneNumber || !college || !semester, !gender, !agree) {
         return res.status(400).json({ message: 'All fields are required.' });
     }
     
@@ -15,6 +15,10 @@ const handleNewRegistration = async (req, res) => {
         User.findOne({ phoneNumber })
     ]);
     
+    if (duplicateEmail && duplicatePhoneNo) {
+        console.log('Duplicate email and PhoneNO found:', duplicateEmail);
+        return res.status(409).json({ message: 'Email and Phone Number already registered.' });
+    }
     if (duplicateEmail) {
         console.log('Duplicate email found:', duplicateEmail);
         return res.status(409).json({ message: 'Email already registered.' });
@@ -31,7 +35,7 @@ const handleNewRegistration = async (req, res) => {
 
         console.log('New user created:', newUser);
         // Send confirmation email
-        await sendConfirmationEmail(name, email);
+        //await sendConfirmationEmail(name, email);
         return res.status(201).json({
             message: `New user '${newUser.name}' created successfully.`,
             user: newUser, // Include the created user details if needed
