@@ -10,6 +10,9 @@ import Footer from './components/Footer';
 import NotFound from './components/NotFound';
 import Schedule from './components/Schedule';
 import Rules from './components/Rules';
+import Conduct from './components/Conduct';
+import Admin from './components/Admin';
+import ScrollToTop from './components/ScrollToTop';
 
 
 function App() {
@@ -17,6 +20,7 @@ function App() {
     <div className='container'>
     <Router>
     <Navbar/>
+    <ScrollToTop />
     <Routes>
     <Route path='/' element={<Home/>}/>
       <Route path='/submit-project' element={<SubmitProject/>}/>
@@ -24,10 +28,12 @@ function App() {
       <Route path='/rules' element={<Rules/>}/>
       <Route path='/about' element={<About/>}/>
       <Route path='/register' element={<Register/>}/>
+      <Route path='/conduct' element={<Conduct/>}/>
+      <Route path='/admin' element={<Admin/>}/>
       <Route path='*' element={<NotFound/>}/>
     </Routes>
-    </Router>
     <Footer/>
+    </Router>
     </div>
   );
 }

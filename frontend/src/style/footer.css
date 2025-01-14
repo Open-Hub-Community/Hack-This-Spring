@@ -23,7 +23,21 @@
   .social-links a:hover {
   color: #007bff;
 }
+.essentials{
+  display: flex;
+  gap: 1rem;
+  text-align: center;
+  justify-content: center;
+  margin: 1rem;
+}
 
+.essentials a{
+  color: #fff !important;
+}
+
+.essentials a:hover{
+  color: #007bff !important;
+}
 .newsletter-form {
     display: flex;
     margin-bottom: 2rem;

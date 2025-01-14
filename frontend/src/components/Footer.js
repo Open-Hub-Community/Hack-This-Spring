@@ -3,6 +3,7 @@ import { FaTwitter, FaLinkedin,FaGithub} from "react-icons/fa";
 import { MdEmail } from "react-icons/md";
 import '../style/footer.css';
 import { postEmail } from "../services/service.js";
+import { NavLink} from "react-router-dom";
 function Footer() {
   const [email, setEmail] = useState("");
   const handleSubmit = (e) => {
@@ -39,6 +40,10 @@ function Footer() {
         <a href="https://github.com/Open-Hub-Community" target="_blank" rel="noopener noreferrer">
     <FaGithub size={24} />
   </a>
+      </div>
+      <div className="essentials">
+        <NavLink to="/conduct">Code of Conduct</NavLink>
+        <NavLink to= "/admin">Admin</NavLink>
       </div>
       <form onSubmit={handleSubmit} className="newsletter-form">
         <input

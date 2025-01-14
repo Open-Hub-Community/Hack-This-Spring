@@ -1,5 +1,6 @@
 import React from 'react';
 import '../style/about.css';
+import { NavLink } from 'react-router-dom';
 
 const About = () => {
   return (
@@ -41,14 +42,7 @@ const About = () => {
       <h2 className="section-title orange">📜 Code of Conduct</h2>
       <p>
         We value a welcoming and inclusive environment. Please review our{' '}
-        <a
-          href="https://github.com/Open-Hub-Community/Code-of-Conduct/blob/main/README.md"
-          target="_blank"
-          rel="noopener noreferrer"
-          className="link"
-        >
-          Code of Conduct
-        </a>
+        <NavLink to="/conduct">Code of Conduct</NavLink>
         .
       </p>
 
