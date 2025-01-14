@@ -21,6 +21,7 @@ function Admin() {
         setServerData(response.data);
         setIsSubmitted(true);
         setIsLoading(false);
+        setError(false);
       })
       .catch((err) => {
         setError("An error occurred while logging in.");

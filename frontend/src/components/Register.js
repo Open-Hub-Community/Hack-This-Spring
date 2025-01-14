@@ -23,6 +23,7 @@ function Register() {
         console.log(result);
         setIsSubmitted(true);
         setIsLoading(false);
+        setError(false);
       })
       .catch((err) => {
         console.error(err.response.data.message);
