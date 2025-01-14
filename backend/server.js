@@ -3,6 +3,7 @@ import mongoose from 'mongoose';
 import connectDb from './config/DBconn.js';
 import cors from 'cors'
 import register from './routes/registerRoute.js';
+import admin from './routes/adminRoute.js';
 const app=express();
 const PORT=process.env.PORT ||8000;
 
@@ -11,6 +12,7 @@ app.use( express.urlencoded({extended:false}) );
 app.use(express.json());
 
 app.use('/register',register);
+app.use('/admin',admin);
 
 connectDb(process.env.DATABASE_URI)
 mongoose.connection.once('open',()=>{
