@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import "../style/admin.css";
 import { postAdmin } from "../services/service.js";
+import Details from "./Details.js";
 
 function Admin() {
   const [isSubmitted, setIsSubmitted] = useState(false);
@@ -14,12 +15,10 @@ function Admin() {
   const handleSubmit = (e) => {
     e.preventDefault();
     setIsLoading(true);
-    const data = { name, password };
+    const data = { adminId: name, password };
     postAdmin(data)
       .then((response) => {
-        // if details match
         setServerData(response.data);
-        // console.log(response.data);
         setIsSubmitted(true);
         setIsLoading(false);
       })
@@ -29,63 +28,52 @@ function Admin() {
         setIsLoading(false);
       });
   };
+
   useEffect(() => {
     if (serverData && Object.keys(serverData).length > 0) {
       console.log("Server Data:", serverData);
     }
   }, [serverData]);
+
   return (
-    <div className="register-container">
+    <div>
       <h1>Admin Portal</h1>
       {!isSubmitted ? (
-        <form onSubmit={handleSubmit} className="register-form">
-          <div className="form-group">
-            <label htmlFor="name">Admin Id</label>
-            <input
-              type="name"
-              id="name"
-              name="name"
-              value={name}
-              onChange={(e) => setName(e.target.value)}
-              required
-            />
-          </div>
-          <div className="form-group">
-            <label htmlFor="name">Password</label>
-            <input
-              type="password"
-              id="name"
-              name="name"
-              value={password}
-              onChange={(e) => setPassword(e.target.value)}
-              required
-            />
-          </div>
-          <button type="submit" className="submit-btn" disabled={isLoading}>
-            {isLoading ? "Logging In..." : "Login"}
-          </button>
-        </form>
+        <div className="register-container">
+          <form onSubmit={handleSubmit} className="register-form">
+            <div className="form-group">
+              <label htmlFor="name">Admin Id</label>
+              <input
+                type="text"
+                id="name"
+                name="name"
+                value={name}
+                onChange={(e) => setName(e.target.value)}
+                required
+              />
+            </div>
+            <div className="form-group">
+              <label htmlFor="password">Password</label>
+              <input
+                type="password"
+                id="password"
+                name="password"
+                value={password}
+                onChange={(e) => setPassword(e.target.value)}
+                required
+              />
+            </div>
+            <button type="submit" className="submit-btn" disabled={isLoading}>
+              {isLoading ? "Logging In..." : "Login"}
+            </button>
+          </form>
+        </div>
       ) : (
-        <>
         <div className="server-response">
-        <h2>Server Response:</h2>
-        <pre>{JSON.stringify(serverData, null, 2)}</pre>
-      </div>
-        {/*  
-        <div className="server-response">
-        <h2>Server Response:</h2>
-        {serverData.map((user, index) => (
-          <div key={index}>
-            <p>ID: {user._id}</p>
-            <h3>User Name: {user.name}</h3>
-            <p>Email: {user.email}</p>
-          </div>
-        ))}
-      </div>
-        */}   </> 
+          <Details serverData={serverData} />
+        </div>
       )}
 
-    
       {error && <p className="error-message">{error}</p>}
     </div>
   );

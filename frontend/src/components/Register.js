@@ -6,6 +6,7 @@ import "../style/register.css";
 function Register() {
   const [isSubmitted, setIsSubmitted] = useState(false);
   const [isLoading, setIsLoading] = useState(false);
+  const [error, setError] = useState(null);
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
   const [phone, setPhone] = useState("");
@@ -19,13 +20,14 @@ function Register() {
     // console.log(data);
     postForm(data)
       .then((result) => {
-        console.log(result.message);
+        console.log(result);
         setIsSubmitted(true);
         setIsLoading(false);
       })
       .catch((err) => {
-        console.error(err);
+        console.error(err.response.data.message);
         setIsLoading(false);
+        setError(err.response.data.message);
       });
   };
 
@@ -36,7 +38,7 @@ function Register() {
           <h2>Registration Successful!</h2>
           <p>
             Thank you for registering for our hackathon. You will receive a
-            confirmation email shortly with further details.
+            <span style={{color:'green'}}> confirmation email </span>shortly with further details.
           </p>
         </div>
       </div>
@@ -117,6 +119,7 @@ function Register() {
           {isLoading ? "Submitting..." : "Submit Registration"}
         </button>
       </form>
+      {error && <p className="error-message">{error}</p>}
     </div>
   );
 }

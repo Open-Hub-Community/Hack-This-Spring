@@ -90,10 +90,13 @@ select {
 
 .success-message p {
   color: #040F0F;
-  font-family: 'Dancing Script', cursive;
+  font-family: 'Roboto', sans-serif;
   line-height: 1.4;
-  font-style: italic;
+  font-style: bold;
   font-size: 0.9rem;
+}
+.error-message{
+  color:red
 }
 
 /* Media query for tablets */
