@@ -16,6 +16,9 @@ const Details = ({ serverData }) => {
                 <strong>Id:</strong> <span>{user._id}</span>
               </div>
               <div className="detail">
+                <strong>Gender:</strong> <span>{user.gender}</span>
+              </div>
+              <div className="detail">
                 <strong>Email:</strong> <span>{user.email}</span>
               </div>
               <div className="detail">

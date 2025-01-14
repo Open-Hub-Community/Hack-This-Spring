@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { NavLink } from "react-router-dom";
-import logo from '../assets/logo.ico';
+import icon1 from '../assets/icon1.png';
 import '../style/nav.css';
 
 function Navbar() {
@@ -14,7 +14,7 @@ function Navbar() {
     <nav className="navbar">
       <div className="navbar-container">
         <div className="navbar-logo">
-          <img src={logo} alt="Hackathon Logo" className="logo-image"/>
+         <NavLink to='/'> <img src={icon1} alt="Hackathon Logo" className="logo-image"/> </NavLink>
         </div>
         <h1 className="nav-title">HACK THIS SPRING</h1>
         <div className={`navbar-links ${isOpen ? 'active' : ''}`}>

@@ -19,7 +19,7 @@ function Register() {
   const handleSubmit = (e) => {
     e.preventDefault();
     setIsLoading(true);
-    const data = { name, email, phoneNumber: phone, college, semester, gender,agree };
+    const data = { name, email, phoneNumber: phone, college, semester,gender,agree };
     // console.log(data);
     postForm(data)
       .then((result) => {

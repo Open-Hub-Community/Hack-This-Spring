@@ -1,7 +1,7 @@
 import axios from 'axios';
 
 const api  = axios.create({
-    baseURL: "https://5a10-117-96-42-245.ngrok-free.app" //"https://jsonplaceholder.typicode.com" // test api
+    baseURL: "https://f946-117-96-42-97.ngrok-free.app/" //"https://jsonplaceholder.typicode.com" // test api
 })
 
 const postEmail = (email) => api.post("/posts",email); //  /register
