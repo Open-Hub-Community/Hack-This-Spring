@@ -27,7 +27,7 @@
   width: 80px;
   height: 80px;
   border-radius: 50%;
-  top: 40px;
+  top: 30px;
   margin-left: 20px;
   object-fit: cover;
   overflow: hidden;
@@ -48,6 +48,7 @@
   display: none;
   flex-direction: column;
   position: absolute;
+  gap: 1rem;
   top: 100%;
   border-radius: 0 0 10px 10px;
   left: 0;
@@ -95,7 +96,7 @@
   background-color: #2366d1;
 }
 .pos{
-  margin-top: 50px;
+  margin-top: 60px;
 }
 .hamburger {
   display: flex;
