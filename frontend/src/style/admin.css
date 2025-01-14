@@ -48,7 +48,6 @@ input:focus{
   outline: none;
   box-shadow: 0 0 0 3px rgba(52, 152, 219, 0.2);
   }
-  
   .submit-btn {
     background-color: #2ecc71;
     color: white;
