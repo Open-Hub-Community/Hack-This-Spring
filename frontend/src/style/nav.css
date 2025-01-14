@@ -68,7 +68,11 @@
   color: #fff;
   text-decoration: none;
   margin-bottom: 1rem;
-  font-size: 1rem;
+  font-size: 1.5rem;
+}
+.nav-title{
+  display: none;
+  margin: 0 auto;
 }
 
 .navbar-links a:hover {
@@ -184,3 +188,31 @@
   }
 }
 
+@media (max-width: 768px) {
+  
+
+  .navbar {
+    height: 110px; /* Adapt navbar height for better alignment */
+  }
+
+  .navbar-logo {
+    top: 5px;
+    margin-left: 20px;
+    object-fit: cover;
+    overflow: hidden;
+    position: relative;
+  }
+  
+  .pos{
+    margin:auto;
+  }
+
+  .nav-title {
+    display: block;
+    text-align: center; /* Center the title */
+    margin: 0 auto; /* Ensure proper centering */
+  }
+  .register-button{
+    font-size: 1.5rem;
+  }
+}

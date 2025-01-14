@@ -16,6 +16,7 @@ function Navbar() {
         <div className="navbar-logo">
           <img src={logo} alt="Hackathon Logo" className="logo-image"/>
         </div>
+        <h1 className="nav-title">HACK THIS SPRING</h1>
         <div className={`navbar-links ${isOpen ? 'active' : ''}`}>
           <NavLink 
             to="/" 
