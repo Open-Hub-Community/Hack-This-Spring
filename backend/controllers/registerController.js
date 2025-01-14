@@ -31,7 +31,7 @@ const handleNewRegistration = async (req, res) => {
     
     try {
         // Create a new user
-        const newUser = await User.create({ name, email, phoneNumber, college, semester });
+        const newUser = await User.create({ name, email, phoneNumber, college, semester, gender, agree });
 
         console.log('New user created:', newUser);
         // Send confirmation email
