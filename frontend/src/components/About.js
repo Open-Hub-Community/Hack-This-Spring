@@ -12,12 +12,12 @@ const About = () => {
         Organized by <strong>Open Hub Community</strong>, this is our first ever hackathon! Join us to collaborate, innovate, and bring your ideas to life.
       </p>
 
-      <h2 className="section-title green">About Open Hub Community</h2>
+      <h2 className="section-title-about green">About Open Hub Community</h2>
       <p>
         <strong>Open Hub Community</strong> is dedicated to fostering open-source collaboration, enhancing coding skills, and bridging the gap between academic knowledge and real-world applications. We host workshops, hackathons, and tech talks to build an inclusive environment for developers and learners.
       </p>
 
-      <h2 className="section-title red">🌟 What We’re All About</h2>
+      <h2 className="section-title-about red">🌟 What We’re All About</h2>
       <ul className="list">
         <li>Educational Workshops: From Git basics to advanced coding sessions.</li>
         <li>Hackathons: Encouraging creative problem-solving and teamwork.</li>
@@ -25,7 +25,7 @@ const About = () => {
         <li>Open Source: Driving contributions to community projects.</li>
       </ul>
 
-      <h2 className="section-title blue">💬 How to Join Us</h2>
+      <h2 className="section-title-about blue">💬 How to Join Us</h2>
       <p>
         Become a part of our journey by joining the OpenHub GitHub Organization.{' '}
         <a
@@ -39,14 +39,14 @@ const About = () => {
         to request an invitation.
       </p>
 
-      <h2 className="section-title orange">📜 Code of Conduct</h2>
+      <h2 className="section-title-about orange">📜 Code of Conduct</h2>
       <p>
         We value a welcoming and inclusive environment. Please review our{' '}
         <NavLink to="/conduct">Code of Conduct</NavLink>
         .
       </p>
 
-      <h2 className="section-title purple">📚 Stay Connected</h2>
+      <h2 className="section-title-about purple">📚 Stay Connected</h2>
       <ul className="list">
         <li>Email: <a href="mailto:open8hub@gmail.com" target='_blank' rel='noreferrer' className="link">hello@openhub.com</a></li>
         <li>GitHub: <a href="https://github.com/Open-Hub-Community"target='_blank' rel='noreferrer' className="link">OpenHub Organization</a></li>

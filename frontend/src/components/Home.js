@@ -1,30 +1,32 @@
 import React, { useState, useEffect } from "react";
-import "../style/home.css";
 import { NavLink } from "react-router-dom";
 import cover from "../assets/cover.jpg";
+import "../style/home.css";
+
 const Home = () => {
-  const [timeLeft, setTimeLeft] = useState(
-    "00 days 00 hours 00 minutes 00 seconds"
-  );
+  const [timeLeft, setTimeLeft] = useState({
+    days: 0,
+    hours: 0,
+    minutes: 0,
+    seconds: 0,
+  });
 
   useEffect(() => {
-    const targetDate = new Date("2025-03-15T09:00:00"); // Set the hackathon start date
+    const targetDate = new Date("2025-03-15T09:00:00");
     const timer = setInterval(() => {
       const now = new Date();
-      const difference = targetDate - now;
+      const difference = targetDate.getTime() - now.getTime();
 
       if (difference <= 0) {
         clearInterval(timer);
-        setTimeLeft("00 days 00 hours 00 minutes 00 seconds");
+        setTimeLeft({ days: 0, hours: 0, minutes: 0, seconds: 0 });
       } else {
-        const days = Math.floor(difference / (1000 * 60 * 60 * 24));
-        const hours = Math.floor((difference / (1000 * 60 * 60)) % 24);
-        const minutes = Math.floor((difference / 1000 / 60) % 60);
-        const seconds = Math.floor((difference / 1000) % 60);
-
-        setTimeLeft(
-          `${days} days ${hours} hours ${minutes} minutes ${seconds} seconds`
-        );
+        setTimeLeft({
+          days: Math.floor(difference / (1000 * 60 * 60 * 24)),
+          hours: Math.floor((difference / (1000 * 60 * 60)) % 24),
+          minutes: Math.floor((difference / 1000 / 60) % 60),
+          seconds: Math.floor((difference / 1000) % 60),
+        });
       }
     }, 1000);
 
@@ -99,11 +101,11 @@ const Home = () => {
       question:
         "Are you sending out acceptances? Is there a deadline to apply? Is there a waitlist?",
       answer:
-        "We will send out acceptances XX days before the event. If you need to know before then to book travel, please reach out to our team for an early review. Applications will be closing once we reach the maximum amount of hackers we can support, but we will have a waitlist the day of the event for any local hackers who want to fill the spots of any accepted hackers who do not end up attending.",
+        "We will send out acceptances XX days before the event. Applications will be closing once we reach the maximum amount of hackers we can support, but we will have a waitlist the day of the event for any local hackers who want to fill the spots of any accepted hackers who do not end up attending.",
     },
     {
       question: "How do I sign up to be a mentor/judge/volunteer?",
-      answer: "You can sign up here - LINK",
+      answer: "Email us at team@openhub.com",
     },
     {
       question: "I still have a question!",
@@ -119,70 +121,85 @@ const Home = () => {
 
   return (
     <div className="app">
-      {/* Event Banner */}
       <header className="banner">
-        <h1>HACK THIS SPRING</h1>
-        <img src={cover} alt="cover" className="cover-image" />
-        <p>
-          "Ready to code? Excited for challenges? 🌟 HACK-THIS-SPRING is where
-          beginners transform passion into action. 🚀 Join us for an
-          electrifying 48-hour hackathon you don’t want to miss!"
-        </p>
+        <div className="banner-content">
+          <h1 className="glitch" data-text="HACK THIS SPRING">
+            HACK THIS SPRING
+          </h1>
+          <p className="subtitle">
+            Ready to code? Excited for challenges? 🌟 HACK-THIS-SPRING is where
+            beginners transform passion into action. 🚀 Join us for an
+            electrifying 48-hour hackathon you don't want to miss!
+          </p>
+          <NavLink to="/register" className="cta-button">
+            <span className="registertext">Register Now</span>
+          </NavLink>
+        </div>
+        <div className="banner-overlay"></div>
+        <img src={cover || "/placeholder.svg"} alt="Hackathon cover" className="cover-image" />
       </header>
 
-      {/* Brief About Hackathon */}
       <section className="about">
-        <h2>About the Hackathon</h2>
-        <p>
+        <h2 className="section-title">About the Hackathon</h2>
+        <p className="section-title-p">
           HACK THIS SPRING is a beginner-friendly hackathon organized by the
-          OpenHub Community. This in-person event will be held at [Insert Venue
-          Name Here]. Join us for 48 hours of coding, learning, and
-          collaboration with like-minded individuals!
+          OpenHub Community. This in-person event will be held at Gcet Safapora
+          Ganderbal. Join us for 48 hours of coding, learning, and collaboration
+          with like-minded individuals!
         </p>
       </section>
 
-      {/* Countdown */}
       <section className="countdown">
-        <h2>48 Hours. One Epic Hackathon. Are You Ready?</h2>
-        <div className="timer">{timeLeft}</div>
+        <h2 className="section-title">48 Hours. One Epic Hackathon. Are You Ready?</h2>
+        <div className="timer">
+          <div className="time-block">
+            <span className="time">{timeLeft.days}</span>
+            <span className="label">Days</span>
+          </div>
+          <div className="time-block">
+            <span className="time">{timeLeft.hours}</span>
+            <span className="label">Hours</span>
+          </div>
+          <div className="time-block">
+            <span className="time">{timeLeft.minutes}</span>
+            <span className="label">Minutes</span>
+          </div>
+          <div className="time-block">
+            <span className="time">{timeLeft.seconds}</span>
+            <span className="label">Seconds</span>
+          </div>
+        </div>
       </section>
-
-      {/* Register Button */}
-      <section className="home-register">
-        <NavLink to="/register">
-          <button className="home-register-button">Register Now</button>
-        </NavLink>
-      </section>
-
-      {/* Sponsors Section */}
       <section className="sponsors">
-        <h2>Our Sponsors</h2>
+        <h2 className="section-title">Our Sponsors</h2>
         <div className="sponsor-logos">
-          {/* Add sponsor logos here */}
-          <img src="sponsor1.png" alt="Sponsor 1" />
-          <img src="sponsor2.png" alt="Sponsor 2" />
-          <img src="sponsor3.png" alt="Sponsor 3" />
+          <img src="/placeholder.svg?height=100&width=200" alt="Sponsor 1" className="sponsor-logo" />
+          <img src="/placeholder.svg?height=100&width=200" alt="Sponsor 2" className="sponsor-logo" />
+          <img src="/placeholder.svg?height=100&width=200" alt="Sponsor 3" className="sponsor-logo" />
         </div>
       </section>
 
-      {/* FAQ Section */}
       <section className="faq">
-        <h2>Frequently Asked Questions</h2>
-        <ul>
+        <h2 className="section-title">Frequently Asked Questions</h2>
+        <div className="faq-list">
           {faqData.map((item, index) => (
-            <li key={index} className="faq-item">
-              <button className="faq-question" onClick={() => toggleFAQ(index)}>
+            <div key={index} className="faq-item">
+              <button
+                className={`faq-question ${activeIndex === index ? 'active' : ''}`}
+                onClick={() => toggleFAQ(index)}
+              >
                 {item.question}
               </button>
-              {activeIndex === index && (
-                <p className="faq-answer">{item.answer}</p>
-              )}
-            </li>
+              <div className={`faq-answer ${activeIndex === index ? 'active' : ''}`}>
+                <p className="feedback-answer">{item.answer}</p>
+              </div>
+            </div>
           ))}
-        </ul>
+        </div>
       </section>
     </div>
   );
 };
 
 export default Home;
+

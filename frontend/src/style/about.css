@@ -26,7 +26,7 @@
   line-height: 1.6;
 }
 
-.section-title {
+.section-title-about {
   font-size: 1.8rem;
   margin-top: 2rem;
   margin-bottom: 1rem;
@@ -34,25 +34,25 @@
   border-bottom: 3px solid;
 }
 
-.section-title.green {
+.section-title-about.green {
   color: #27ae60;
   border-color: #27ae60;
 }
 
-.section-title.red {
+.section-title-about.red {
   color: #e74c3c;
   border-color: #e74c3c;
 }
 
-.section-title.blue {
+.section-title-about.blue {
   color: #3498db;
   border-color: #3498db;
 }
-.section-title.orange {
+.section-title-about.orange {
     color: #FFA500; 
     border-color: #FFA500;
   }
-  .section-title.purple {
+  .section-title-about.purple {
     color: #800080;
     border-color: #800080;
   }
@@ -82,7 +82,7 @@ a {
 }
 
 a:hover {
-  color: #2980b9;
+  color: #3ce3e9;
   text-decoration: underline;
 }
 
@@ -99,7 +99,7 @@ a:hover {
     font-size: 1rem;
   }
 
-  .section-title {
+  .section-title-about {
     font-size: 1.5rem;
   }
 }
