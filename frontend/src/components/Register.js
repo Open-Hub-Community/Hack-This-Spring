@@ -19,19 +19,27 @@ function Register() {
   const handleSubmit = (e) => {
     e.preventDefault();
     setIsLoading(true);
-    const data = { name, email, phoneNumber: phone, college, semester,gender,agree };
+    const data = {
+      name,
+      email,
+      phoneNumber: phone,
+      college,
+      semester,
+      gender,
+      agree,
+    };
     // console.log(data);
     postForm(data)
       .then((result) => {
-        console.log(result);
+        // console.log(result);
         setIsSubmitted(true);
         setIsLoading(false);
         setError(false);
       })
       .catch((err) => {
-        console.error(err.response.data.message);
+        // console.error(err.response.data.message);
         setIsLoading(false);
-        setError(err.response.data.message);
+        setError(err.response);
       });
   };
 
@@ -155,24 +163,33 @@ function Register() {
           </div>
         </div>
         <div className="form-group">
-  <label htmlFor="terms">
-    <input
-      type="checkbox"
-      id="terms"
-      name="terms"
-      checked={agree}
-      required
-      onChange={(e) => setAgree(e.target.checked)}
-    />
-    <span> I have read and agree to the <NavLink to="/conduct">Code of Conduct</NavLink> and <NavLink to="/rules">Rules</NavLink>.</span>
-  </label>
-</div>
+          <label htmlFor="terms">
+            <input
+              type="checkbox"
+              id="terms"
+              name="terms"
+              checked={agree}
+              required
+              onChange={(e) => setAgree(e.target.checked)}
+            />
+            <span>
+              {" "}
+              I have read and agree to the{" "}
+              <NavLink to="/conduct">Code of Conduct</NavLink> and{" "}
+              <NavLink to="/rules">Rules</NavLink>.
+            </span>
+          </label>
+        </div>
 
         <button type="submit" className="submit-btn" disabled={isLoading}>
           {isLoading ? "Submitting..." : "Submit Registration"}
         </button>
       </form>
-      {error && <p className="error-message">{error}</p>}
+      {error && (
+        <p className="error-message">
+          {error.status === 500 ? "Check  email again" : error.data.message}
+        </p>
+      )}
     </div>
   );
 }

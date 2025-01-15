@@ -170,14 +170,14 @@ const Home = () => {
           </div>
         </div>
       </section>
-      <section className="sponsors">
+      {/* <section className="sponsors">
         <h2 className="section-title">Our Sponsors</h2>
         <div className="sponsor-logos">
           <img src="/placeholder.svg?height=100&width=200" alt="Sponsor 1" className="sponsor-logo" />
           <img src="/placeholder.svg?height=100&width=200" alt="Sponsor 2" className="sponsor-logo" />
           <img src="/placeholder.svg?height=100&width=200" alt="Sponsor 3" className="sponsor-logo" />
         </div>
-      </section>
+      </section> */}
 
       <section className="faq">
         <h2 className="section-title">Frequently Asked Questions</h2>

@@ -1,11 +1,11 @@
 import axios from 'axios';
 
 const api  = axios.create({
-    baseURL: "https://f946-117-96-42-97.ngrok-free.app/" //"https://jsonplaceholder.typicode.com" // test api
+    baseURL: "https://3af6-117-96-41-105.ngrok-free.app" //"https://jsonplaceholder.typicode.com" // test api
 })
 
-const postEmail = (email) => api.post("/posts",email); //  /register
 const postForm = (details) => api.post("/register",details); // /register
 const postAdmin = (admin) => api.post("/admin",admin);
+const postNewsLetter = (email)=> api.post("/newsletter",email)
 
-export {postEmail,postForm,postAdmin}
+export {postForm,postAdmin,postNewsLetter}
