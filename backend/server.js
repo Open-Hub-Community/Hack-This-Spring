@@ -4,6 +4,7 @@ import connectDb from './config/DBconn.js';
 import cors from 'cors'
 import register from './routes/registerRoute.js';
 import admin from './routes/adminRoute.js';
+import newsletter from './routes/newsletterRoute.js';
 const app=express();
 const PORT=process.env.PORT ||8000;
 
@@ -13,6 +14,7 @@ app.use(express.json());
 
 app.use('/register',register);
 app.use('/admin',admin);
+app.use('/newsletter',newsletter);
 
 connectDb(process.env.DATABASE_URI)
 mongoose.connection.once('open',()=>{

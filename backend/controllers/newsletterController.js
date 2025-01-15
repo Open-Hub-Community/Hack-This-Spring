@@ -20,7 +20,7 @@ const handleNewSubscriber = async (req, res) => {
         console.log('New subscriber created:', newSubscriber);
 
         // Send confirmation email
-        await sendConfirmationEmail(email);
+        //await sendConfirmationEmail(email);
 
         return res.status(201).json({
             message: `New subscriber '${newSubscriber.email}' added successfully.`
