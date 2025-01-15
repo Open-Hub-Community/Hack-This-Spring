@@ -28,7 +28,7 @@ const Rules = () => {
           <li>Teams can use libraries, frameworks, or open-source code in their projects.</li>
           <li>Adding new features to existing projects is allowed. Judges will only consider new functionality introduced or new features added during the hackathon in determining the winners.</li>
           <li>Teams must stop hacking once the time is up. However, teams are allowed to debug and make small fixes to their programs after time is up.</li>
-          <li>Projects that violate the <NavLink to="/conduct">Code of Conduct</NavLink>are not allowed.</li>
+          <li>Projects that violate the <NavLink to="/conduct">Code of Conduct</NavLink> are not allowed.</li>
           <li>Teams can be disqualified from the competition at the organizers' discretion for breaking the Competition Rules, the Code of Conduct, or other unsporting behavior.</li>
         </ol>
       </section>
