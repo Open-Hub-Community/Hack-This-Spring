@@ -64,12 +64,6 @@ Welcome to **Hack This Spring**, a dynamic hackathon platform developed by the O
 
 ---
 
-## 📄 License
-
-This project is licensed under the MIT License. See the [LICENSE](LICENSE) file for more details.
-
----
-
 ## 📝 Contributing
 
 Contributions are welcome! If you would like to improve the project, feel free to open an issue or submit a pull request.
