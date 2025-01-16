@@ -13,15 +13,12 @@ const handleNewSubscriber = async (req, res) => {
       }
     const duplicateEmail = await Subscribers.findOne({ email }); 
     if (duplicateEmail) {
-        console.log('Duplicate email found:', duplicateEmail);
         return res.status(409).json({ message: 'Email already registered.' });
     } 
       
     // Create a new subscriber
     try {
         const newSubscriber = await Subscribers.create({ email });
-        console.log('New subscriber created:', newSubscriber);
-
         // Send confirmation email
         const mailOptions = {
             from: '"Open Hub Community" <open8hub@gmail.com>',
@@ -56,7 +53,6 @@ const handleNewSubscriber = async (req, res) => {
             message: `New subscriber '${newSubscriber.email}' added successfully.`
         });
     } catch (error) {
-        console.error('Error handling new subscription:', error);
         return res.status(500).json({ message: 'Internal server error while handling new subscription' });
     }
 };

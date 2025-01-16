@@ -19,7 +19,6 @@ const handleNewRegistration = async (req, res) => {
         return res.status(400).json({ message: 'Email domain not allowed.' });
     }
     if (duplicateEmail && duplicatePhoneNo) {
-        console.log('Duplicate email and PhoneNO found:', duplicateEmail);
         return res.status(409).json({ message: 'Email and Phone Number already registered.' });
     }
     else if (duplicateEmail) {
@@ -34,10 +33,6 @@ const handleNewRegistration = async (req, res) => {
     try {
         // Create a new user
         const newUser = await User.create({ name, email, phoneNumber, college, semester, gender, agree });
-
-        console.log('New user created:', newUser);
-
-
         const mailOptions={
             from:'"Hack-This-Spring Team" open8hub@gmail.com',
             to: email,
@@ -52,15 +47,12 @@ const handleNewRegistration = async (req, res) => {
                 <p>The HackThisSpring Team</p>
             `
         };
-        
-
         // Send confirmation email
-         sendConfirmationEmail( email, mailOptions);
+        sendConfirmationEmail( email, mailOptions);
         return res.status(201).json({
             message: `New user '${newUser.name}' created successfully.`//, user: newUser, // Include the created user details if needed
         });
     } catch (error) {
-        console.error('Error handling new registration: \n',error, error.message);
         return res.status(500).json({ message: error.message });
     }
 };

@@ -14,10 +14,8 @@ const sendConfirmationEmail=async( email,mailOptions)=>{
         });
         //Send mail
         await transporter.sendMail(mailOptions);
-        console.log(`Confirmation email sent to ${email}`);
     }
     catch (error) {
-        console.error('Error sending confirmation email:', error.message);
         throw new Error('Failed to send confirmation email.');
     }
 }
