@@ -6,4 +6,5 @@ const router=express.Router();
 
 router.post('/', verifyAdmin ,getAllStudents);
 
+
 export default router
