@@ -1,16 +1,22 @@
 import Subscribers from "../models/Subscriber.js";
 import sendConfirmationEmail from "../services/emailService.js";
-
+import allowedDomains from "../config/allowedDomains.js";
 const handleNewSubscriber = async (req, res) => {
     const { email } = req.body;
     if (!email) {
         return res.status(400).json({ message: 'Enter email to subscribe to the newsletter' });
     }
+      // Check if the email domain is allowed
+      const emailDomain = email.split('@')[1];
+      if (!allowedDomains.includes(emailDomain)) {
+          return res.status(400).json({ message: 'Email domain not allowed.' });
+      }
     const duplicateEmail = await Subscribers.findOne({ email }); 
     if (duplicateEmail) {
         console.log('Duplicate email found:', duplicateEmail);
         return res.status(409).json({ message: 'Email already registered.' });
     } 
+      
     // Create a new subscriber
     try {
         const newSubscriber = await Subscribers.create({ email });

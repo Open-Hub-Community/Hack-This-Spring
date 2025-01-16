@@ -1,5 +1,6 @@
 import User from "../models/User.js";
 import sendConfirmationEmail from "../services/emailService.js";
+import allowedDomains from "../config/allowedDomains.js";
 
 const handleNewRegistration = async (req, res) => {
     const { name, email, phoneNumber, college, semester,gender, agree } = req.body;
@@ -12,7 +13,11 @@ const handleNewRegistration = async (req, res) => {
         User.findOne({ email }),
         User.findOne({ phoneNumber })
     ]);
-    
+    // Check if the email domain is allowed
+    const emailDomain = email.split('@')[1];
+    if (!allowedDomains.includes(emailDomain)) {
+        return res.status(400).json({ message: 'Email domain not allowed.' });
+    }
     if (duplicateEmail && duplicatePhoneNo) {
         console.log('Duplicate email and PhoneNO found:', duplicateEmail);
         return res.status(409).json({ message: 'Email and Phone Number already registered.' });
@@ -26,7 +31,7 @@ const handleNewRegistration = async (req, res) => {
         console.log('Duplicate phone number found:', duplicatePhoneNo);
         return res.status(409).json({ message: 'Phone number already registered.' });
     }
-    
+     
     try {
         // Create a new user
         const newUser = await User.create({ name, email, phoneNumber, college, semester, gender, agree });
