@@ -22,12 +22,11 @@ const handleNewRegistration = async (req, res) => {
         console.log('Duplicate email and PhoneNO found:', duplicateEmail);
         return res.status(409).json({ message: 'Email and Phone Number already registered.' });
     }
-    if (duplicateEmail) {
+    else if (duplicateEmail) {
         console.log('Duplicate email found:', duplicateEmail);
         return res.status(409).json({ message: 'Email already registered.' });
     }
-    
-    if (duplicatePhoneNo) {
+    else if (duplicatePhoneNo) {
         console.log('Duplicate phone number found:', duplicatePhoneNo);
         return res.status(409).json({ message: 'Phone number already registered.' });
     }
@@ -56,7 +55,7 @@ const handleNewRegistration = async (req, res) => {
         
 
         // Send confirmation email
-        await sendConfirmationEmail( email, mailOptions);
+         sendConfirmationEmail( email, mailOptions);
         return res.status(201).json({
             message: `New user '${newUser.name}' created successfully.`//, user: newUser, // Include the created user details if needed
         });

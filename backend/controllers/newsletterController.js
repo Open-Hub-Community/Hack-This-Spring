@@ -51,7 +51,7 @@ const handleNewSubscriber = async (req, res) => {
             `
         };
         
-        await sendConfirmationEmail(email,mailOptions);
+         sendConfirmationEmail(email,mailOptions);
         return res.status(201).json({
             message: `New subscriber '${newSubscriber.email}' added successfully.`
         });
