@@ -1,7 +1,7 @@
 import axios from 'axios';
 
 const api  = axios.create({
-    baseURL: "https://hack-this-spring.onrender.com" //"https://jsonplaceholder.typicode.com" // test api
+    baseURL: process.env.REACT_APP_API_BASE_URL
 })
 
 const postForm = (details) => api.post("/register",details); // /register
