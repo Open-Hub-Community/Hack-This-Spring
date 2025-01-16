@@ -19,44 +19,6 @@ Welcome to **Hack This Spring**, a dynamic hackathon platform developed by the O
 
 ---
 
-## 🖥️ Setup Instructions
-
-1. **Clone the repository:**
-   ```bash
-   git clone https://github.com/OpenHubCommunity/HackThisSpring.git
-   ```
-
-2. **Navigate to the project directory:**
-   ```bash
-   cd HackThisSpring
-   ```
-
-3. **Install dependencies:**
-   - Frontend:
-     ```bash
-     cd frontend
-     npm install
-     ```
-   - Backend:
-     ```bash
-     cd backend
-     npm install
-     ```
-
-4. **Run the application:**
-   - Frontend:
-     ```bash
-     npm start
-     ```
-   - Backend:
-     ```bash
-     npm start
-     ```
-
-5. Open your browser and navigate to `http://localhost:3000` for the frontend.
-
----
-
 ## 🌟 Credits
 
 - **Frontend Developer**: [Anaan](https://github.com/Anan328)
@@ -72,4 +34,12 @@ Contributions are welcome! If you would like to improve the project, feel free t
 
 ## 📧 Contact
 
-For any queries or collaboration opportunities, reach out to us via our [OpenHub Community page](#).
+For any queries or collaboration opportunities, reach out to us via our [OpenHub Community page](https://github.com/Open-Hub-Community).
+
+---
+
+## 🌐 Preview the Site
+
+Want to see how the site works? Check out the live preview here: [Preview the Site](https://openhubsite.netlify.app/)
+
+---
