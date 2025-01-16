@@ -40,6 +40,6 @@ For any queries or collaboration opportunities, reach out to us via our [OpenHub
 
 ## 🌐 Preview the Site
 
-Want to see how the site works? Check out the live preview here: [Preview the Site](https://openhubsite.netlify.app/)
+Want to see how the site works? Check out the live preview here: [Preview the Site](https://openhubsite.web.app/)
 
 ---
