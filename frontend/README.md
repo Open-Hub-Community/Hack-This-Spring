@@ -1,70 +1,81 @@
-# Getting Started with Create React App
+# Hack This Spring
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Welcome to **Hack This Spring**, a dynamic hackathon platform developed by the OpenHub community! This website serves as a central hub for students to get information about our hackathon and register to participate.
 
-## Available Scripts
+---
 
-In the project directory, you can run:
+## 🚀 Features
 
-### `npm start`
+- **Hackathon Details**: Stay updated with all the information about Hack This Spring, including schedules, themes, and prizes.
+- **Registration**: Seamless online registration for participants.
+- **Responsive Design**: Optimized for all devices, ensuring a great user experience.
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+---
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+## 🛠️ Tech Stack
 
-### `npm test`
+- **Frontend**: React.js
+- **Backend**: Node.js
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+---
 
-### `npm run build`
+## 🖥️ Setup Instructions
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+1. **Clone the repository:**
+   ```bash
+   git clone https://github.com/OpenHubCommunity/HackThisSpring.git
+   ```
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+2. **Navigate to the project directory:**
+   ```bash
+   cd HackThisSpring
+   ```
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+3. **Install dependencies:**
+   - Frontend:
+     ```bash
+     cd frontend
+     npm install
+     ```
+   - Backend:
+     ```bash
+     cd backend
+     npm install
+     ```
 
-### `npm run eject`
+4. **Run the application:**
+   - Frontend:
+     ```bash
+     npm start
+     ```
+   - Backend:
+     ```bash
+     npm start
+     ```
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+5. Open your browser and navigate to `http://localhost:3000` for the frontend.
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+---
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+## 🌟 Credits
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+- **Frontend Developer**: [Anaan](https://github.com/Anan328)
+- **Backend Developer**: [Naik Mubashir](https://github.com/naikmubashir)
 
-## Learn More
+---
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+## 📄 License
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+This project is licensed under the MIT License. See the [LICENSE](LICENSE) file for more details.
 
-### Code Splitting
+---
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+## 📝 Contributing
 
-### Analyzing the Bundle Size
+Contributions are welcome! If you would like to improve the project, feel free to open an issue or submit a pull request.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+---
 
-### Making a Progressive Web App
+## 📧 Contact
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+For any queries or collaboration opportunities, reach out to us via our [OpenHub Community page](#).
