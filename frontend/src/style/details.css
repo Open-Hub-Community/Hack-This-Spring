@@ -1,0 +1,77 @@
+.college-info-card {
+    padding: 2rem;
+    background-color: #f9f9f9;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    max-width: 600px;
+    margin: 0 auto;
+    margin-bottom: 50px;
+  }
+  
+  .name {
+    font-size: 1.5rem;
+    font-weight: bold;
+    text-transform: uppercase;
+    text-align: center;
+    text-decoration: underline;
+    color: #333;
+  }
+  
+  .college-details {
+    margin-top: 1rem;
+  }
+  
+  .detail {
+    margin-bottom: 1rem;
+  }
+  
+  .detail strong {
+    color: #555;
+  }
+  
+  .detail span {
+    color: #777;
+  }
+  
+  /* Container */
+.subscribed-users-container {
+  max-width: 600px;
+  margin: 20px auto;
+  padding: 20px;
+  border-radius: 10px;
+  background: linear-gradient(135deg, #6a11cb, #2575fc);
+  color: #fff;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+  font-family: 'Arial', sans-serif;
+}
+
+/* Title */
+.subscribed-users-title {
+  text-align: center;
+  margin-bottom: 15px;
+  font-size: 24px;
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+/* List */
+.subscribed-users-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+/* List Item */
+.subscribed-users-item {
+  padding: 10px 15px;
+  margin: 8px 0;
+  border-radius: 8px;
+  background: rgba(255, 255, 255, 0.2);
+  transition: background 0.3s, transform 0.3s;
+  cursor: pointer;
+}
+
+/* Hover Effect */
+.subscribed-users-item:hover {
+  background: rgba(255, 255, 255, 0.4);
+  transform: translateY(-3px);
+}

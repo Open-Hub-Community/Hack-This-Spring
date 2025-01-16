@@ -1,0 +1,83 @@
+/* Main container */
+.not-found-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    background: linear-gradient(135deg, #a0c4ff, #6e9fcc); 
+    color: white;
+    font-family: 'Arial', sans-serif;
+    text-align: center;
+    padding: 20px;
+  }
+  
+  /* Glitch effect for the 404 */
+  .glitch {
+    font-size: 100px;
+    font-weight: bold;
+    text-transform: uppercase;
+    position: relative;
+    display: inline-block;
+    color: #fff;
+    animation: glitch 1.5s infinite linear;
+  }
+  
+  /* Glitch text animation */
+  @keyframes glitch {
+    0% {
+      transform: skew(-10deg) translateX(-5px);
+      text-shadow: 2px 2px 0px rgba(0, 0, 0, 0.1), -2px -2px 0px rgba(0, 0, 0, 0.1);
+    }
+    20% {
+      transform: skew(10deg) translateX(5px);
+      text-shadow: -2px -2px 0px rgba(0, 0, 0, 0.2), 2px 2px 0px rgba(0, 0, 0, 0.2);
+    }
+    40% {
+      transform: skew(-10deg) translateX(-5px);
+      text-shadow: 2px 2px 0px rgba(0, 0, 0, 0.3), -2px -2px 0px rgba(0, 0, 0, 0.3);
+    }
+    60% {
+      transform: skew(10deg) translateX(5px);
+      text-shadow: -2px -2px 0px rgba(0, 0, 0, 0.4), 2px 2px 0px rgba(0, 0, 0, 0.4);
+    }
+    100% {
+      transform: skew(-10deg) translateX(-5px);
+      text-shadow: 2px 2px 0px rgba(0, 0, 0, 0.5), -2px -2px 0px rgba(0, 0, 0, 0.5);
+    }
+  }
+  
+  /* Message styles */
+  .message {
+    font-size: 24px;
+    font-weight: 500;
+    margin-top: 20px;
+  }
+  
+  .submessage {
+    font-size: 16px;
+    margin-top: 10px;
+    opacity: 0.8;
+  }
+  
+  /* Button styles */
+  .home-button {
+    display: inline-block;
+    margin-top: 30px;
+    padding: 15px 30px;
+    background-color: #333;
+    color: white;
+    text-decoration: none;
+    font-size: 18px;
+    border-radius: 5px;
+    border: 2px solid transparent;
+    transition: all 0.3s ease;
+  }
+  
+  .home-button:hover {
+    background-color: #fff;
+    color: #333;
+    border-color: #333;
+    transform: scale(1.05);
+  }
+  
