@@ -11,6 +11,7 @@ function Admin() {
 
   const [name, setName] = useState("");
   const [password, setPassword] = useState("");
+  const[subscribers,setSubscribers] = useState();
 
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -18,7 +19,9 @@ function Admin() {
     const data = { adminId: name, password };
     postAdmin(data)
       .then((response) => {
-        setServerData(response.data);
+        console.log(response.data);
+        setServerData(response.data[0]);
+        setSubscribers(response.data[1]);
         setIsSubmitted(true);
         setIsLoading(false);
         setError(false);
@@ -71,7 +74,7 @@ function Admin() {
         </div>
       ) : (
         <div className="server-response">
-          <Details serverData={serverData} />
+          <Details serverData={serverData} subscribers={subscribers}/>
         </div>
       )}
 

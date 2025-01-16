@@ -109,7 +109,7 @@ const Home = () => {
     },
     {
       question: "I still have a question!",
-      answer: "Email us at team@openhub.com",
+      answer: "Email us at open8hub@gmail.com",
     },
   ];
 

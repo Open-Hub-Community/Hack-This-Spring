@@ -1,8 +1,10 @@
 import React from 'react';
 import "../style/details.css";
+// import { getSubscriber } from "../services/service.js";
+
+const Details = ({ serverData, subscribers }) => {
 
 
-const Details = ({ serverData }) => {
     return (
       <>
         {serverData.map((user, index) => (
@@ -33,6 +35,18 @@ const Details = ({ serverData }) => {
             </div>
           </div>
         ))}
+        <div className="subscribed-users-container">
+  <h2 className="subscribed-users-title">Subscribed Users</h2>
+  <ul className="subscribed-users-list">
+    {subscribers.map((item, index) => (
+      <li key={index} className="subscribed-users-item">
+        {item.email}
+      </li>
+    ))}
+  </ul>
+</div>
+
+
       </>
     );
   };
