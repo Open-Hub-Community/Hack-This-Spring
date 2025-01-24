@@ -34,7 +34,7 @@ const handleNewRegistration = async (req, res) => {
         // Create a new user
         const newUser = await User.create({ name, email, phoneNumber, college, semester, gender, agree });
         const mailOptions={
-            from:'"Hack-This-Spring Team" noreply',
+            from:'"Hack-This-Spring Team" open8hub@gmail.com',
             to: email,
             subject: 'Registration Confirmation for Hack This Spring',
             text:`Dear ${name},\n\nThank you for registering for HackThisSpring! We are excited to have you onboard for this prestigious hackathon organized by the OpenHub Community.\n\nIn the coming days, we will be hosting a team-building meet where you will have the opportunity to connect with other developers, discuss ideas, and form your teams for the event. We encourage you to participate actively and collaborate with fellow developers.\n\nWe look forward to seeing you at HackThisSpring and wish you the best of luck!\n\nBest regards,\nThe HackThisSpring Team`,
